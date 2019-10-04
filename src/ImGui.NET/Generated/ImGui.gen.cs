@@ -10392,20 +10392,20 @@ namespace ImGuiNET
         {
             ImGuiNative.igSetMouseCursor(type);
         }
-        public static void SetNextItemWidth(float item_width)
-        {
-            ImGuiNative.igSetNextItemWidth(item_width);
-        }
-        public static void SetNextTreeNodeOpen(bool is_open)
+        public static void SetNextItemOpen(bool is_open)
         {
             byte native_is_open = is_open ? (byte)1 : (byte)0;
             ImGuiCond cond = 0;
-            ImGuiNative.igSetNextTreeNodeOpen(native_is_open, cond);
+            ImGuiNative.igSetNextItemOpen(native_is_open, cond);
         }
-        public static void SetNextTreeNodeOpen(bool is_open, ImGuiCond cond)
+        public static void SetNextItemOpen(bool is_open, ImGuiCond cond)
         {
             byte native_is_open = is_open ? (byte)1 : (byte)0;
-            ImGuiNative.igSetNextTreeNodeOpen(native_is_open, cond);
+            ImGuiNative.igSetNextItemOpen(native_is_open, cond);
+        }
+        public static void SetNextItemWidth(float item_width)
+        {
+            ImGuiNative.igSetNextItemWidth(item_width);
         }
         public static void SetNextWindowBgAlpha(float alpha)
         {
@@ -10470,6 +10470,15 @@ namespace ImGuiNET
             void* native_custom_callback_data = (void*)custom_callback_data.ToPointer();
             ImGuiNative.igSetNextWindowSizeConstraints(size_min, size_max, custom_callback, native_custom_callback_data);
         }
+        public static void SetScrollFromPosX(float local_x)
+        {
+            float center_x_ratio = 0.5f;
+            ImGuiNative.igSetScrollFromPosX(local_x, center_x_ratio);
+        }
+        public static void SetScrollFromPosX(float local_x, float center_x_ratio)
+        {
+            ImGuiNative.igSetScrollFromPosX(local_x, center_x_ratio);
+        }
         public static void SetScrollFromPosY(float local_y)
         {
             float center_y_ratio = 0.5f;
@@ -10478,6 +10487,15 @@ namespace ImGuiNET
         public static void SetScrollFromPosY(float local_y, float center_y_ratio)
         {
             ImGuiNative.igSetScrollFromPosY(local_y, center_y_ratio);
+        }
+        public static void SetScrollHereX()
+        {
+            float center_x_ratio = 0.5f;
+            ImGuiNative.igSetScrollHereX(center_x_ratio);
+        }
+        public static void SetScrollHereX(float center_x_ratio)
+        {
+            ImGuiNative.igSetScrollHereX(center_x_ratio);
         }
         public static void SetScrollHereY()
         {
@@ -12560,10 +12578,6 @@ namespace ImGuiNET
             {
                 Util.Free(native_fmt);
             }
-        }
-        public static void TreeAdvanceToLabelPos()
-        {
-            ImGuiNative.igTreeAdvanceToLabelPos();
         }
         public static bool TreeNode(string label)
         {

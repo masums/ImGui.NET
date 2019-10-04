@@ -13,6 +13,7 @@ namespace ImGuiNET
         public float WindowBorderSize;
         public Vector2 WindowMinSize;
         public Vector2 WindowTitleAlign;
+        public ImGuiDir WindowMenuButtonPosition;
         public float ChildRounding;
         public float ChildBorderSize;
         public float PopupRounding;
@@ -31,6 +32,7 @@ namespace ImGuiNET
         public float GrabRounding;
         public float TabRounding;
         public float TabBorderSize;
+        public ImGuiDir ColorButtonPosition;
         public Vector2 ButtonTextAlign;
         public Vector2 SelectableTextAlign;
         public Vector2 DisplayWindowPadding;
@@ -102,6 +104,7 @@ namespace ImGuiNET
         public ref float WindowBorderSize => ref Unsafe.AsRef<float>(&NativePtr->WindowBorderSize);
         public ref Vector2 WindowMinSize => ref Unsafe.AsRef<Vector2>(&NativePtr->WindowMinSize);
         public ref Vector2 WindowTitleAlign => ref Unsafe.AsRef<Vector2>(&NativePtr->WindowTitleAlign);
+        public ref ImGuiDir WindowMenuButtonPosition => ref Unsafe.AsRef<ImGuiDir>(&NativePtr->WindowMenuButtonPosition);
         public ref float ChildRounding => ref Unsafe.AsRef<float>(&NativePtr->ChildRounding);
         public ref float ChildBorderSize => ref Unsafe.AsRef<float>(&NativePtr->ChildBorderSize);
         public ref float PopupRounding => ref Unsafe.AsRef<float>(&NativePtr->PopupRounding);
@@ -120,6 +123,7 @@ namespace ImGuiNET
         public ref float GrabRounding => ref Unsafe.AsRef<float>(&NativePtr->GrabRounding);
         public ref float TabRounding => ref Unsafe.AsRef<float>(&NativePtr->TabRounding);
         public ref float TabBorderSize => ref Unsafe.AsRef<float>(&NativePtr->TabBorderSize);
+        public ref ImGuiDir ColorButtonPosition => ref Unsafe.AsRef<ImGuiDir>(&NativePtr->ColorButtonPosition);
         public ref Vector2 ButtonTextAlign => ref Unsafe.AsRef<Vector2>(&NativePtr->ButtonTextAlign);
         public ref Vector2 SelectableTextAlign => ref Unsafe.AsRef<Vector2>(&NativePtr->SelectableTextAlign);
         public ref Vector2 DisplayWindowPadding => ref Unsafe.AsRef<Vector2>(&NativePtr->DisplayWindowPadding);
